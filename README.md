@@ -27,4 +27,5 @@ tracker.extend(sub_tracker);
 tracker.write("report.md").unwrap();
 ```
 
-This creates a markdown report of the time spent on tasks.
+This creates a markdown report of the time spent on tasks, which you can see an example of in
+`report.md`.
