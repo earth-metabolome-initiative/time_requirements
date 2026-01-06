@@ -13,19 +13,42 @@ are slow and need to be optimized.
 ## Usage
 
 ```rust
+use std::{thread, time::Duration};
 use time_requirements::prelude::*;
 
 let mut tracker = TimeTracker::new("My Project");
-let task = Task::new("Build");
+
+// Start tracking a task
+let task = Task::new("Heavy Computation");
+
+// Simulate work
+thread::sleep(Duration::from_millis(100));
+
+// Complete the task and add it to the tracker
 tracker.add_completed_task(task);
 
-let mut sub_tracker = TimeTracker::new("Sub Task");
-let sub_task = Task::new("Compile");
+// You can also use sub-trackers for logical grouping
+let mut sub_tracker = TimeTracker::new("Database Operations");
+let sub_task = Task::new("Query");
+// ... perform query ...
 sub_tracker.add_completed_task(sub_task);
+
+// Merge sub-tracker into the main tracker
 tracker.extend(sub_tracker);
 
+// Save the report to a file
 tracker.write("report.md").unwrap();
 ```
 
 This creates a markdown report of the time spent on tasks, which you can see an example of in
 `report.md`.
+
+## Features
+
+- **Simple Task Tracking**: Measure the duration of individual tasks.
+- **Hierarchical Reporting**: Use sub-trackers to group tasks logically.
+- **Markdown Reports**: Automatically generate readable Markdown reports including:
+  - Total time spent
+  - Slowest task analysis
+  - Detailed table of tasks with time and percentage distributions
+  - JSON export support via `save()`
