@@ -4,6 +4,8 @@
 [![Security Audit](https://github.com/earth-metabolome-initiative/time_requirements/workflows/Security%20Audit/badge.svg)](https://github.com/earth-metabolome-initiative/time_requirements/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Codecov](https://codecov.io/gh/earth-metabolome-initiative/time_requirements/branch/main/graph/badge.svg)](https://codecov.io/gh/earth-metabolome-initiative/time_requirements)
+[![Crates.io](https://img.shields.io/crates/v/time_requirements.svg)](https://crates.io/crates/time_requirements)
+[![Docs.rs](https://docs.rs/time_requirements/badge.svg)](https://docs.rs/time_requirements)
 
 Simple crate to measure time requirements of steps in your code.
 
